@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, DownloadCloud } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection }) => {
   const navItems = [
@@ -51,8 +51,7 @@ const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection
               {item.label}
             </motion.a>
           ))}
-
-         
+        </nav>
 
         {/* ===== Header Actions for Mobile ===== */}
         <div className="header-actions">

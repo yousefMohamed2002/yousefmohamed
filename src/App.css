@@ -1,4 +1,7 @@
 /* App.css - Optimized Version */
+main {
+  padding-top: 80px; /* adjust based on your navbar height */
+}
 
 /* ===== CSS Variables ===== */
 :root {

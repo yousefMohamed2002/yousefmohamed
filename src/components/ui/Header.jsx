@@ -52,17 +52,7 @@ const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection
             </motion.a>
           ))}
 
-          {/* ===== Resume Button inside Navbar ===== */}
-          <motion.a
-            href="/YousefMohamed (1).pdf"
-            className="nav-link resume-nav"
-            download
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <DownloadCloud size={16} /> Resume
-          </motion.a>
-        </nav>
+         
 
         {/* ===== Header Actions for Mobile ===== */}
         <div className="header-actions">

@@ -8,7 +8,7 @@ const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
-    { id: "contact", label: "Contact" }
+    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -19,6 +19,7 @@ const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection
       transition={{ duration: 0.6 }}
     >
       <div className="header-container">
+        {/* ===== Logo Section ===== */}
         <div className="logo">
           <motion.div
             className="logo-circle"
@@ -33,12 +34,13 @@ const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection
           </div>
         </div>
 
-        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+        {/* ===== Navigation ===== */}
+        <nav className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
           {navItems.map((item) => (
             <motion.a
               key={item.id}
               href={`#${item.id}`}
-              className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+              className={`nav-link ${activeSection === item.id ? "active" : ""}`}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => {
@@ -49,24 +51,26 @@ const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection
               {item.label}
             </motion.a>
           ))}
-        </nav>
 
-        <div className="header-actions">
+          {/* ===== Resume Button inside Navbar ===== */}
           <motion.a
             href="/YousefMohamed (1).pdf"
-            className="resume-button"
+            className="nav-link resume-nav"
             download
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
             <DownloadCloud size={16} /> Resume
           </motion.a>
+        </nav>
 
+        {/* ===== Header Actions for Mobile ===== */}
+        <div className="header-actions">
           <button
             className="mobile-menu-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`}>
+            <div className={`menu-icon ${isMenuOpen ? "open" : ""}`}>
               <span></span>
               <span></span>
               <span></span>
@@ -78,6 +82,5 @@ const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection
   );
 });
 
-Header.displayName = 'Header';
-
+Header.displayName = "Header";
 export default Header;

@@ -19,7 +19,7 @@ const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection
       transition={{ duration: 0.6 }}
     >
       <div className="header-container">
-        {/* ===== Logo Section ===== */}
+        {/* ===== Logo + Mobile Button ===== */}
         <div className="logo">
           <motion.div
             className="logo-circle"
@@ -28,10 +28,23 @@ const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection
           >
             <Sparkles size={24} />
           </motion.div>
+
           <div className="logo-text">
             <h1>Yousef Mohamed</h1>
             <p>AI Developer • ML Engineer • Flutter Developer</p>
           </div>
+
+          {/* Mobile Menu Button next to Logo */}
+          <button
+            className="mobile-menu-btn"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <div className={`menu-icon ${isMenuOpen ? "open" : ""}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
         </div>
 
         {/* ===== Navigation ===== */}
@@ -46,26 +59,13 @@ const Header = memo(({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection(item.id);
+                setIsMenuOpen(false); // close after clicking
               }}
             >
               {item.label}
             </motion.a>
           ))}
         </nav>
-
-        {/* ===== Header Actions for Mobile ===== */}
-        <div className="header-actions">
-          <button
-            className="mobile-menu-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <div className={`menu-icon ${isMenuOpen ? "open" : ""}`}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </button>
-        </div>
       </div>
     </motion.header>
   );

@@ -186,6 +186,17 @@ html,
 .menu-icon.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+.resume-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.resume-nav svg {
+  margin-bottom: 2px;
+}
+
 
 /* ===== Responsive Navbar ===== */
 @media (max-width: 900px) {
